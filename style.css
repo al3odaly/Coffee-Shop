@@ -1,0 +1,242 @@
+/* 
+
+font-family: "Open Sans", sans-serif;
+
+*/
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Open Sans", sans-serif;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+main {
+	background-color: #efefef;
+	width: 100%;
+	margin: 0 auto;
+	padding: 30px;
+}
+
+.nav-bar {
+	background: #43281c;
+	color: #fbf2c0;
+	font-size: 16px;
+}
+
+.brand-logo {
+	max-width: 25px;
+	max-height: 25px;
+}
+
+.option {
+	margin-bottom: 5px;
+}
+
+.items,
+.order,
+.payment-info {
+	background-color: #eee1d5;
+	padding: 15px;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px rgb(0 0 0/ 0.2);
+	margin-bottom: 25px;
+}
+
+.item {
+	padding: 10px 0;
+	border-bottom: 2px solid #ddb892;
+}
+
+.item:last-child {
+	border-bottom: none;
+}
+
+.items-title,
+.order-title,
+.payment-title,
+.order-name-label,
+.card-input-label,
+.cvv-input-label {
+	color: #885a2d;
+}
+
+.items-title,
+.order-title,
+.payment-title {
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.item-name,
+.item-price {
+	font-weight: bold;
+}
+
+.item-options-list {
+	color: #b08968;
+	font-size: 14px;
+	padding: 0;
+}
+
+.items-list,
+.order-name,
+.payment-input-group {
+	margin-bottom: 20px;
+}
+
+.order-name-label,
+.card-input-label,
+.cvv-input-label {
+	font-size: 11px;
+	background-color: #eee1d5;
+	padding: 0 2px;
+}
+
+.order-name-input,
+.card-input,
+.cvv-input {
+	width: 100%;
+	border: 2px solid #885a2d;
+	background-color: rgba(0, 0, 0, 0);
+	padding: 8px;
+	border-radius: 100px;
+	text-indent: 18px;
+	font-size: 18px;
+}
+
+.card-input::-webkit-inner-spin-button,
+.cvv-input::-webkit-inner-spin-button {
+	appearance: none;
+}
+
+.order-name-input:focus,
+.card-input:focus,
+.cvv-input:focus {
+	outline: none;
+}
+
+.cvv-input {
+	max-width: 200px;
+}
+
+.checkout-table {
+	margin-bottom: 30px;
+	width: 100%;
+	max-width: 500px;
+}
+
+td {
+	padding: 10px;
+}
+
+tr td:last-child {
+	text-align: right;
+}
+
+.checkout-total {
+	font-weight: bold;
+}
+
+.checkout-btn {
+	background-color: #deb993;
+	border: none;
+	padding: 10px 30px;
+	border-radius: 100px;
+	font-size: 16px;
+	width: 100%;
+	cursor: pointer;
+}
+
+.checkout-btn:focus,
+.checkout-btn:hover {
+	background-color: #43281c;
+	color: #fff;
+}
+
+/* layout */
+
+.main {
+	display: grid;
+	grid-template-areas:
+		"items     payment"
+		"checkout  checkout";
+	grid-template-columns: 1fr 1fr;
+	column-gap: 30px;
+	row-gap: 30px;
+}
+
+.items {
+	grid-area: items;
+}
+
+.payment {
+	grid-area: payment;
+}
+
+.checkout {
+	grid-area: checkout;
+}
+
+.nav-bar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.brand-logo {
+	position: relative;
+	top: 3px;
+}
+
+.item {
+	display: grid;
+	grid-template-areas:
+		"item-quantity item-name         item-price"
+		"item-quantity item-options-list  item-price";
+	grid-template-columns: 1fr 8fr 1fr;
+	row-gap: 10px;
+}
+
+.item-quantity {
+	grid-area: item-quantity;
+}
+
+.item-name {
+	grid-area: item-name;
+}
+
+.item-price {
+	grid-area: item-price;
+}
+
+.item-options-list {
+	grid-area: item-options-list;
+}
+
+.order-name,
+.payment-input-group {
+	position: relative;
+}
+
+.order-name-label,
+.card-input-label,
+.cvv-input-label {
+	position: absolute;
+	top: -8px;
+	left: 25px;
+}
+
+.checkout {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
